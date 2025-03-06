@@ -18,7 +18,8 @@ Types of times series model
 9. LSTM : Deep neural network for long term dependencies
 
 ### Step by step guide
-step 1.Observe the data for any trend and seasonality, handle both in forecasting
+step 1.Observe the data for any trend and seasonality, handle both in forecasting using STL
+
 step 2. check for stationarity in data using 
 if mean and variance do not change over time
 we use Augmented Dicky Fuller test
@@ -50,6 +51,13 @@ STep 3: Handle stationarity
 1. Apply differencing
 2. Log transformation
 3. Use seasonal ARIMA
+   
+Periodogram: Identify dominant frequencies. It is computed by Fourier transform
+In the series with high periodicity , it should exhibit clear peaks at frequencies
+
+Handle multiple Periodicities
+Seasonal Decomposition: Use STL, what is STL-> trends, seasonality and residual component
+a Hybrid or Ensemble Model: Sarima or prophet
 
 Step 4 Find best parameters for ARIMA
 ACF and PACF
@@ -64,7 +72,24 @@ PACF helps identify Auto-Regressive model
 It measures direct relationship between an observation and its lagged values without any influence of intermediate lags
 
 Step 5  Model evaluation
+MAE
+RMSE
+MAPE: when units matter, % for better interpretability
 
+
+I worked on the demand forecasting project where we needed to prdict demand at SKU, catgoery, distributer and retailer for Middle East countries
+The company was facing overstockinga dn understoking which let to lost in sales and high inventory cost
+Demand was highly seasonal and influnced by external factors
+Our task was to build accurate forcastig mothods to help company optimized their inventory. We needed to test multiple models to identify best forcasting methods and evalaute 
+W gathered historical sales data for each SKU, marketing and promotion spends, external factors
+the data has missing value , treated threm using interpolation
+Removing outliers using IQR and STL
+feature engineering
+
+Model selection, we had 12 different model, statitics based, Machine Learning based Deep learning
+I also tried ensemble approach and bottom to up approach, I went with the best performing singke method approach
+
+I evauated method using MAPE to ensure robustness
 
 
 
@@ -83,6 +108,8 @@ import statsmodel.tsa.arima.model import ARIMA```
 3. Check for stationarity
 A time series is stationary if its 
 
+4. Periodogram: Check for dominant frequency
+Identify seasonal patterns
 
 
 
