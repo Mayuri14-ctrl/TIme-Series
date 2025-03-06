@@ -13,7 +13,9 @@ Types of times series model
 4. ARIMA : Handle non stationary time series by differencing the data to remove trends
 5. SARIMA: It extends ARIMA  y including seasonal components
 6. ETS (Exponential smoothening):  Give more weights to recent data for foreascting
-7. LSTM : Deep neural network for long term dependencies
+7. Holt's Linear Trend method
+8. Holts winter method
+9. LSTM : Deep neural network for long term dependencies
 
 ### Step by step guide
 step 1.Observe the data for any trend and seasonality, handle both in forecasting
@@ -37,8 +39,8 @@ A time series with unit root will show
 How to apply ADF?
 apply differencing
 delta Y=Y(t)-Y(t-1)
-```y_diff=np.diff(y)
-y_lag=y[:-1]
+``` y_diff=np.diff(y)```
+y_lag=y[:-1] 
 It regresses the lagged data with differenced data
 delta y=a+by(t-1)+cy(t-2)
 model=sm.OLS(y_diff,x)
@@ -46,9 +48,23 @@ check t statistic
 
 STep 3: Handle stationarity
 1. Apply differencing
-2. Log transformatio
+2. Log transformation
+3. Use seasonal ARIMA
 
-Step 4 Find best parameters
+Step 4 Find best parameters for ARIMA
+ACF and PACF
+To understand correlation between past observations and current observations
+ACF: It checks correlation between time series and its own lagged values
+The bar represents correlation at different lag
+A slow decay suggests a non stationary process
+If the ACF cuts off after  a certain lag , it indicates an MA(q) model
+If ACF does not cut off sharply, it might not be an MA(q) model.
+
+PACF helps identify Auto-Regressive model
+It measures direct relationship between an observation and its lagged values without any influence of intermediate lags
+
+Step 5  Model evaluation
+
 
 
 
