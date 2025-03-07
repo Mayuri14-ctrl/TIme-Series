@@ -87,10 +87,13 @@ Removing outliers using IQR and STL
 feature engineering
 
 Model selection, we had 12 different model, statitics based, Machine Learning based Deep learning
-I also tried ensemble approach and bottom to up approach, I went with the best performing singke method approach
+I also tried ensemble approach where I checked mape using all , best 3 and few selected algorithms to check MAPE, We figured in 80% of the data ensemble methods were working better
+I read multiple papers and found top to down and bottom to up appoarch, and in our model, bottom to up approach worked better as there was high variable demand  at lower level.
+Promotion , pricing, demad shift different SKUs
 
 I evauated method using MAPE to ensure robustness
 
+what is stacking?
 
 
 ```pip install pandas numpy matplotlib statsmodel pmdarima```
