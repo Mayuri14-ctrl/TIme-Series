@@ -79,7 +79,7 @@ MAPE: when units matter, % for better interpretability
 
 I worked on the demand forecasting project where we needed to prdict demand at SKU, catgoery, distributer and retailer for Middle East countries
 The company was facing overstockinga dn understoking which let to lost in sales and high inventory cost
-Demand was highly seasonal and influnced by external factors
+Demand was highly seasonal and influnced by external factors at SKU level, so we followed bottom to up approach to forecast at retailer level
 Our task was to build accurate forcastig mothods to help company optimized their inventory. We needed to test multiple models to identify best forcasting methods and evalaute 
 W gathered historical sales data for each SKU, marketing and promotion spends, external factors
 the data has missing value , treated threm using interpolation
